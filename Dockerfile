@@ -7,6 +7,6 @@ RUN gradle bootJar --no-daemon
 # Etapa 2: Runtime con JDK 21 (ejecución)
 FROM eclipse-temurin:21-jdk
 WORKDIR /app
-COPY --from=build /app/build/libs/*.jar demo_play.jar
+COPY --from=build /app/build/libs/*.jar demo-play1.0.0.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-Dspring.profiles.active=prod", "-jar", "demo-play.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=prod", "-jar", "demo-play1.0.0.jar"]
